@@ -1,6 +1,6 @@
 {
   "name": "books-image-converter",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Console application to convert images to a differente formats using the node package Sharp",
   "keywords": [
     "node",
