@@ -1,0 +1,19 @@
+{
+  "files.exclude": {
+    "**.gitignore": false,
+    "**/.github": true,
+    "**/.storybook": false,
+    "**/tests": true,
+    ".npmrc": true,
+    ".tsconfig.json": true,
+    ".autorc": true,
+    "commitlint.config.mjs": true,
+    "eslint.config.ts": true,
+    "babel.config.json": true,
+    "**jest.config.cjs": true,
+    "**jest.setup.js": true,
+    "package-lock.json": true,
+    "**setupTest.js": true,
+    "**/commitlint.config.js": true
+  }
+}
