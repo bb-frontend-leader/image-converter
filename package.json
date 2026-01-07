@@ -39,7 +39,6 @@
     "cz": "cz",
     "release": "npm run build && bash ./scripts/release.sh",
     "version": "auto version",
-    "publish:auto": "auto shipit",
     "changelog": "auto changelog"
   },
   "devDependencies": {
