@@ -9,7 +9,6 @@ Una aplicación CLI para convertir imágenes a diferentes formatos usando Sharp,
 - 💻 CLI interactiva con prompts intuitivos
 - 🏗️ Diseño con Arquitectura Limpia
 - 📦 TypeScript para seguridad de tipos
-- 🎨 Salida de consola hermosa con Chalk
 
 ## 📋 Requisitos Previos
 
@@ -20,10 +19,10 @@ Una aplicación CLI para convertir imágenes a diferentes formatos usando Sharp,
 
 ```bash
 # Clonar el repositorio
-git clone <repository-url>
+git clone git@github.com:bb-frontend-leader/image-converter.git
 
 # Navegar al directorio del proyecto
-cd books-image-converter
+cd image-converter
 
 # Instalar dependencias
 npm install
@@ -130,14 +129,8 @@ Este proyecto usa [Conventional Commits](https://www.conventionalcommits.org/). 
 npm run cz
 ```
 
-## 📄 Licencia
+## ❤️ Hecho con el 💙 en Books&Books  
 
-MIT
+Nos enorgullece desarrollar este proyecto como parte del compromiso de **Books&Books** con la educación y la innovación tecnológica. 🌟  
 
-## 👤 Autor
-
-Alejandro Repizo
-
----
-
-**Nota**: Esta es una herramienta CLI diseñada para ayudar con tareas de conversión de imágenes por lotes, particularmente útil para la preparación de libros y contenido educativo.
+Gracias por visitar nuestro proyecto. ¡Juntos podemos hacer del aprendizaje una experiencia increíble! 🥳✨
