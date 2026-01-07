@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Console application to convert images to a differente formats using the node package Sharp",
   "keywords": [
-    "node"
+    "node", "image", "converter", "sharp", "cli"
   ],
   "license": "MIT",
   "author": "Alejandro Repizo",
