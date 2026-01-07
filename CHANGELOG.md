@@ -10,6 +10,18 @@
 
 ---
 
+# v1.3.0 (Wed Jan 07 2026)
+
+#### 🚀 Enhancement
+
+- feat: enhance README.md with improved structure and additional examples (coor_frontend@booksandbooksdigital.com.co)
+
+#### Authors: 1
+
+- bb-frontend-leader (coor_frontend@booksandbooksdigital.com.co)
+
+---
+
 # v1.2.0 (Wed Jan 07 2026)
 
 #### 🚀 Enhancement
