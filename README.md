@@ -1,133 +1,209 @@
-# 📚 Books Image Converter
+<h1 align="center">
+  📚 Books Image Converter
+</h1>
 
-Una aplicación CLI para convertir imágenes a diferentes formatos usando Sharp, construida con TypeScript y siguiendo los principios de Arquitectura Limpia.
+<p align="center">
+  <strong>Convierte imágenes entre diferentes formatos con facilidad</strong>
+</p>
+
+<p align="center">
+  <img alt="NPM Downloads" src="https://img.shields.io/npm/dm/books-image-converter">
+  <img alt="NPM Version" src="https://img.shields.io/npm/v/books-image-converter">
+  <img alt="License" src="https://img.shields.io/npm/l/books-image-converter">
+  <img alt="Bundle Size" src="https://img.shields.io/bundlephobia/min/books-image-converter">
+</p>
+
+<p align="center">
+  <a href="#-características">Características</a> •
+  <a href="#-instalación">Instalación</a> •
+  <a href="#-uso">Uso</a> •
+  <a href="#-ejemplos">Ejemplos</a>
+</p>
+
+---
+
+## 📖 Descripción
+
+**Books Image Converter** es una herramienta CLI potente y fácil de usar para convertir imágenes entre diferentes formatos. Perfecta para preparar contenido de libros digitales, optimizar imágenes web o procesar lotes de imágenes de forma eficiente.
+
+Construida con TypeScript, Sharp y siguiendo principios de Arquitectura Limpia para garantizar código mantenible y escalable.
 
 ## ✨ Características
 
-- 🖼️ Convierte imágenes entre múltiples formatos (JPEG, PNG, WebP, AVIF, etc.)
-- 🚀 Procesamiento de imágenes de alto rendimiento con Sharp
-- 💻 CLI interactiva con prompts intuitivos
-- 🏗️ Diseño con Arquitectura Limpia
-- 📦 TypeScript para seguridad de tipos
+- 🖼️ **Múltiples Formatos**: Convierte entre JPEG, PNG, WebP y más
+- ⚡ **Alto Rendimiento**: Procesamiento ultra rápido con Sharp
+- 🎯 **Modo Interactivo**: CLI intuitiva con prompts guiados
+- 🚀 **Modo Comando**: Ejecución rápida con parámetros
+- 📁 **Batch Processing**: Convierte carpetas completas de una vez
+- 🗑️ **Limpieza Automática**: Opción para eliminar archivos originales
+- 💻 **Cross-platform**: Funciona en Windows, macOS y Linux
+- 📦 **Sin Configuración**: Listo para usar después de instalar
 
-## 📋 Requisitos Previos
+## 📦 Instalación
 
-- Node.js (v18 o superior recomendado)
-- npm o yarn
-
-## 🔧 Instalación
+### Uso con npx (Sin instalación)
 
 ```bash
-# Clonar el repositorio
-git clone git@github.com:bb-frontend-leader/image-converter.git
+npx books-image-converter convert
+```
 
-# Navegar al directorio del proyecto
-cd image-converter
+### Instalación Global
 
-# Instalar dependencias
-npm install
+```bash
+npm install -g books-image-converter
+```
 
-# Construir el proyecto
-npm run build
+### Instalación en Proyecto
+
+```bash
+npm install books-image-converter
 ```
 
 ## 🚀 Uso
 
-### Modo Desarrollo
+### Inicio Rápido
+
+La forma más fácil de comenzar es usar el **modo interactivo**:
 
 ```bash
-npm run dev
+npx books-image-converter convert
 ```
 
-### Modo Producción
+La CLI te guiará paso a paso:
+
+```
+🎨 B&B - Image Converter
+
+📂 Ruta de la carpeta con las imágenes: ./imagenes
+🎯 Formato de salida:
+  ❯ WebP (mejor compresión)
+    JPG (compatible)
+    PNG (sin pérdida)
+📁 ¿Usar carpeta de salida diferente? No
+🗑️  ¿Eliminar imágenes originales? No
+
+🔄 Convirtiendo imágenes a .webp...
+✅ Se convirtieron 15 imágenes exitosamente
+```
+
+### Modo Comando (Avanzado)
+
+Para usuarios que prefieren rapidez:
 
 ```bash
-# Construir el proyecto
-npm run build
-
-# Ejecutar la CLI
-npm start
+books-image-converter convert -i ./imagenes -f webp
 ```
 
-### Usar la CLI directamente
+### Opciones Disponibles
 
-Después de construir, puedes usar la CLI a través del comando bin:
+| Opción | Alias | Descripción | Requerido |
+|--------|-------|-------------|-----------|
+| `--input` | `-i` | Ruta de la carpeta con imágenes | Sí* |
+| `--format` | `-f` | Formato de salida (webp, jpg, png) | Sí* |
+| `--output` | `-o` | Carpeta de salida (por defecto: misma carpeta) | No |
+| `--delete` | `-d` | Eliminar imágenes originales | No |
+
+<sub>* Solo requeridos en modo comando. En modo interactivo se solicitan automáticamente.</sub>
+
+## 💡 Ejemplos
+
+### Ejemplo 1: Conversión Básica
+
+Convertir todas las imágenes de una carpeta a WebP:
 
 ```bash
-node dist/index.js
+npx books-image-converter convert -i ./mis-fotos -f webp
 ```
 
-O instálalo globalmente para usar el comando `image-converter` desde cualquier lugar.
+### Ejemplo 2: Con Carpeta de Salida
 
-## 📜 Scripts Disponibles
-
-| Script | Descripción |
-|--------|-------------|
-| `npm run build` | Compila TypeScript a JavaScript |
-| `npm start` | Ejecuta la aplicación compilada |
-| `npm run dev` | Construye y ejecuta en modo desarrollo |
-| `npm run clean` | Elimina el directorio dist |
-| `npm run cz` | Usa Commitizen para commits convencionales |
-
-## 📁 Estructura del Proyecto
-
-```
-books-image-converter/
-├── src/
-│   ├── index.ts                           # Punto de entrada
-│   ├── domain/                            # Capa de dominio
-│   │   ├── repository/                    # Interfaces de repositorios
-│   │   │   └── image-converter.repository.ts
-│   │   └── use-cases/                     # Lógica de negocio
-│   │       └── convert-images.use-case.ts
-│   ├── infrastructure/                    # Capa de infraestructura
-│   │   └── repositories/                  # Implementaciones de repositorios
-│   │       └── sharp-image-converter.imp.ts
-│   └── presentation/                      # Capa de presentación
-│       └── cli.ts                         # Interfaz CLI
-├── dist/                                  # Salida compilada
-├── package.json
-├── tsconfig.json
-├── eslint.config.ts
-└── commitlint.config.mjs
-```
-
-## 🛠️ Tecnologías Utilizadas
-
-- **[Sharp](https://sharp.pixelplumbing.com/)** 🖼️ - Procesamiento de imágenes de alto rendimiento
-- **[TypeScript](https://www.typescriptlang.org/)** 📘 - JavaScript con tipos seguros
-- **[Commander.js](https://github.com/tj/commander.js)** ⚡ - Framework CLI
-- **[Inquirer](https://github.com/SBoudrias/Inquirer.js)** ❓ - Prompts interactivos
-- **[Chalk](https://github.com/chalk/chalk)** 🎨 - Estilos para terminal
-- **[ESLint](https://eslint.org/)** ✅ - Linting de código
-- **[Commitlint](https://commitlint.js.org/)** 📝 - Validación de mensajes de commit
-- **[Commitizen](http://commitizen.github.io/cz-cli/)** 🤝 - Commits estandarizados
-
-## 👨‍💻 Desarrollo
-
-Este proyecto sigue los principios de Arquitectura Limpia con clara separación de responsabilidades:
-
-- **Capa de Dominio**: Contiene la lógica de negocio e interfaces de repositorios
-- **Capa de Infraestructura**: Implementa detalles técnicos (integración con Sharp)
-- **Capa de Presentación**: Maneja la interacción del usuario a través de la CLI
-
-### 🔗 Alias de Rutas
-
-El proyecto usa alias de rutas de TypeScript para importaciones más limpias:
-
-- `#domain/*` - Módulos de la capa de dominio
-- `#infrastructure/*` - Módulos de la capa de infraestructura
-- `#presentation/*` - Módulos de la capa de presentación
-- `#application/*` - Módulos de la capa de aplicación
-- `#utils/*` - Módulos de utilidades
-
-### 📝 Convención de Commits
-
-Este proyecto usa [Conventional Commits](https://www.conventionalcommits.org/). Usa Commitizen para commits guiados:
+Mantener originales y guardar convertidas en otra carpeta:
 
 ```bash
-npm run cz
+npx books-image-converter convert \
+  -i ./imagenes-originales \
+  -f jpg \
+  -o ./imagenes-convertidas
 ```
+
+### Ejemplo 3: Optimización Web
+
+Convertir a WebP y eliminar originales para ahorrar espacio:
+
+```bash
+npx books-image-converter convert -i ./assets/images -f webp -d
+```
+
+### Ejemplo 4: Conversión a PNG
+
+Para mantener calidad sin pérdida:
+
+```bash
+npx books-image-converter convert -i ./fotos -f png
+```
+
+### Ejemplo 5: Uso en Scripts
+
+Integra en tus scripts de build:
+
+```json
+{
+  "scripts": {
+    "optimize-images": "books-image-converter convert -i ./public/images -f webp"
+  }
+}
+```
+
+## 🎯 Casos de Uso
+
+### 🌐 Optimización Web
+
+```bash
+books-image-converter convert -i ./src/assets -f webp -d
+```
+
+### 🖼️ Estandarización de Formatos
+
+```bash
+books-image-converter convert -i ./coleccion-fotos -f png
+```
+
+## 🏗️ Arquitectura
+
+Este proyecto sigue los principios de **Clean Architecture**:
+
+```
+📂 src/
+├── 📁 domain/              # Lógica de negocio
+│   ├── repository/         # Interfaces
+│   └── use-cases/          # Casos de uso
+├── 📁 infrastructure/      # Implementaciones técnicas
+│   └── repositories/       # Sharp integration
+└── 📁 presentation/        # Capa de presentación
+    └── cli.ts              # Interfaz CLI
+```
+
+## 🛠️ Tecnologías
+
+- **[Sharp](https://sharp.pixelplumbing.com/)** - Procesamiento de imágenes de alto rendimiento
+- **[TypeScript](https://www.typescriptlang.org/)** - Type safety
+- **[Commander.js](https://github.com/tj/commander.js)** - CLI framework
+- **[Inquirer](https://github.com/SBoudrias/Inquirer.js)** - Prompts interactivos
+- **[Chalk](https://github.com/chalk/chalk)** - Styling para terminal
+
+## 🤝 Contribuir
+
+¿Encontraste un bug o tienes una idea? ¡Las contribuciones son bienvenidas!
+
+1. Fork el proyecto
+2. Crea tu feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'feat: Add amazing feature'`)
+4. Push a la branch (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📝 Changelog
+
+Ver [CHANGELOG.md](./CHANGELOG.md) para detalles de cada versión.
 
 ## ❤️ Hecho con el 💙 en Books&Books  
 
