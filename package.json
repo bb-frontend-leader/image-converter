@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "Console application to convert images to a differente formats using the node package Sharp",
   "keywords": [
-    "node", "image", "converter", "sharp", "cli"
+    "node",
+    "image",
+    "converter",
+    "sharp",
+    "cli"
   ],
   "license": "MIT",
   "author": "Alejandro Repizo",
@@ -11,6 +15,12 @@
   "main": "./dist/index.js",
   "bin": {
     "image-converter": "./dist/index.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
   },
   "imports": {
     "#/*": "./dist/*",
@@ -26,14 +36,23 @@
     "start": "node dist/index.js",
     "dev": "tsc && node dist/index.js",
     "clean": "rm -rf dist",
-    "cz": "cz"
+    "cz": "cz",
+    "release": "npm run build && bash ./scripts/release.sh",
+    "version": "auto version",
+    "publish:auto": "auto shipit",
+    "changelog": "auto changelog"
   },
   "devDependencies": {
+    "@auto-it/conventional-commits": "^11.3.6",
+    "@auto-it/first-time-contributor": "^11.3.6",
+    "@auto-it/npm": "^11.3.6",
+    "@auto-it/released": "^11.3.6",
     "@commitlint/cli": "^20.3.0",
     "@commitlint/config-conventional": "^20.3.0",
     "@eslint/js": "9.39.2",
     "@types/node": "25.0.3",
     "@types/sharp": "0.31.1",
+    "auto": "^11.3.6",
     "commitizen": "^4.3.1",
     "eslint": "9.39.2",
     "eslint-plugin-simple-import-sort": "12.1.1",
@@ -41,6 +60,7 @@
     "globals": "17.0.0",
     "husky": "^9.1.7",
     "jiti": "2.6.1",
+    "tslib": "^2.8.1",
     "typescript": "5.9.3",
     "typescript-eslint": "8.52.0"
   },
