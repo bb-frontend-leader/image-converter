@@ -1,3 +1,19 @@
+# v1.2.0 (Wed Jan 07 2026)
+
+#### 🚀 Enhancement
+
+- feat: update .gitignore and add VSCode settings for file exclusion ([@bb-frontend-leader](https://github.com/bb-frontend-leader))
+
+#### 🐛 Bug Fix
+
+- fix: remove unused publish:auto script from package.json ([@bb-frontend-leader](https://github.com/bb-frontend-leader))
+
+#### Authors: 1
+
+- Frontend-leader ([@bb-frontend-leader](https://github.com/bb-frontend-leader))
+
+---
+
 # v1.1.0 (Wed Jan 07 2026)
 
 :tada: This release contains work from a new contributor! :tada:
