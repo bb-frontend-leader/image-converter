@@ -1,0 +1,49 @@
+{
+  "name": "books-image-converter",
+  "version": "1.0.0",
+  "description": "Console application to convert images to a differente formats using the node package Sharp",
+  "keywords": [
+    "node"
+  ],
+  "license": "MIT",
+  "author": "Alejandro Repizo",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "image-converter": "./dist/index.js"
+  },
+  "imports": {
+    "#/*": "./dist/*",
+    "#domain/*": "./dist/domain/*",
+    "#infrastructure/*": "./dist/infrastructure/*",
+    "#presentation/*": "./dist/presentation/*",
+    "#application/*": "./dist/application/*",
+    "#api/*": "./dist/presentation/api/*",
+    "#utils/*": "./dist/utils/*"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc && node dist/index.js",
+    "clean": "rm -rf dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.2",
+    "@types/node": "25.0.3",
+    "@types/sharp": "0.31.1",
+    "eslint": "9.39.2",
+    "eslint-plugin-simple-import-sort": "12.1.1",
+    "eslint-plugin-unused-imports": "4.3.0",
+    "globals": "17.0.0",
+    "jiti": "2.6.1",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.52.0"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "8.1.0",
+    "chalk": "5.6.2",
+    "commander": "14.0.2",
+    "sharp": "0.34.5"
+  }
+}
